@@ -4,35 +4,41 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="./styles.css">
         <title>Week 1</title>
     </head>
     <body>
       <header>
-				<h1>Welcome to Week 1</h1>
-				<h2>Topics: Local Storage and Mobile UX Design and Review</h2>
+				<h1>Thank You Brother Baer!</h1>
 			</header> 
-			<nav>
-				<ul>
-					<li>Local Storage</li>
-					<li>UX Design</li>
-				</ul>
-			</nav>
 			<main>
 				<section>
 					<h2>Local Storage</h2>
-					<p>
-
-					</p>
+					<p>The local storage stores an application data so it does not get lost when the application closes or refreshes. It stores data with no expiration date. The local storage stores strings. I learned it has two methods in the book but an extra reading about it on MDN showed another method. They are: the <code>getItem()</code>, <code>setItem()</code>, and <code>removeItem()</code> methods.</p>
+          <h3>Local Storage Methods</h3>
+          <ol>
+            <li>The <code>getItem()</code> method reads the data from the local storage. It takes one argument that is referenced as the key to search for and open the content/value.</li>
+            <li>The <code>setItem()</code> method saves data to the local storage. It take two arguments- the key and the value.</li>
+            <li>The <code>removeItem()</code> method removes the data from the local storage.</li>
+          </ol>
+          <p>All data saved in the local storage is saved in the browser. The local storage saves a key/value pair and uses it to access the data in the background.</p>  
+          <h3>Questions</h3>
+          <ol>
+            <li>Is localStorage an object or a property of the window object?</li>
+            <li>Does the local storage stores other data like documents, images or audio?</li>
+          </ol>
 				</section>
 				<section>
-					<h2>Mobile UX Design</h2>
+					<h2>Master Mobile UX</h2>
+          <p>One of the most important things I learned from this course was that designing for the mobile view is always the best. Why? because it gives you chance to provide the best user experience accross many devices. It addresses constraints of bandwith.</p>
 				</section>
-
-
+        <section>
+          <h2>Exercise</h2>
+          <a href="./example/editor.html">Click here to view a working example</a>
+        </section>
 			</main>
 			<footer>
 
 			</footer>
     </body>
-		<script type="module" src="./main.js"></script>
 </html>

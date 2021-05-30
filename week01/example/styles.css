@@ -1,0 +1,10 @@
+body {
+    line-height: 2;
+}
+label, input, textarea {
+    display: block;
+}
+textarea {
+    background-color: lightyellow;
+    width: 95%;
+}
