@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Welcome to Week 2</h1>
+    <h2>JavaScript Basics</h2>
+    <p> Any value that isn’t one of the primitive data types(String, Symbol, Number, Boolean, Undefined, Null) is an object. These include arrays, functions and object literals.</p>
+    <h3>Variables</h3>
+    <p>From ES6 onwards, JavaScript uses the keywords "const" and "let" to declare variables. Typing the name of a variable declared using the const or let keyword makes the console display its value below it, without even clicking the enter button. That isn't the case for the var keyword. When you declare a variable with the var keyword and want to see its value in the console, you have type the name and enter it. using const means you can’t reassign the variable to another value. That means that if a variable is assigned to a primitive data type, then the value can’t be changed, and will result in an error if you attempt to. If the variable references a non-primitive data type, such as an array, function or object, then using const will not make it immutable. This means the underlying data inside the object can change (known as mutating the object).
+    <pre style="margin-left: -70px; background-color: lightgoldenrodyellow;">
+        <code>    
+            const pair = { value: 'Alexa' };
+            pair.value = 'Siri';//Changes the value to Siri
+        </code>
+    </pre>
+    Using const prevents you from reassigning a variable to another object, as it will produce an error, as illustrated below:
+    <pre style="margin-left: -70px; background-color: lightgoldenrodyellow;">
+        <code>    
+            // declare object
+            const name = { value: 'Alexa' };
+            // attempt to reassign to another object
+            name = { value: 'Siri' }
+            << TypeError: Assignment to constant variable.
+        </code>
+    </pre></p>
+    <h3>Scopes</h3>
+    <p>Variables defined inside a block using the let or const will only be available inside that block and not be accessible outside of that block. They are said to have a block or local scope. Global scope vars are declared outside a block and are accessible everywhere in the program. If const or let is not used and var or no keyword is used to declare a var in a block, the var will have a global scope and an be accessed anywhere in the program.</p>
+    <h3>Strings</h3>
+    <p>Variables that start with an underscore, generally refer to private properties and methods, so it’s best to not follow this convention for your own variable names. The 1 character is also used by the popular jQuery library, so using this in your variable names may also cause problems. All properties of primitive data types are immutable, meaning they’re unable to be changed. </p>
+    <h3>Symbols</h3>
+    <p>Symbols were introduced as a new primitive value in ES6. They can be used to create unique values, which helps to avoid any naming collisions. Symbols are the only primitives that don’t have a literal form. The only way to create them is to use the Symbol() function. I have to learn more about symbols.</p>
+    <h2>Arrays, Logic and Loops</h2>
+    <p>The three data structures in JavaScript are arrays, sets and map. If an element in an array is empty, undefined is returned. Each item in array can be treated like a var. Elements in an array don't have to be of the same datatype. The 'delete' operator can be used to remove a element in an array. When an item is removed, the space it occupies is still there and contains a value of undefined. This means the array still has the same number of elements, and the position can still be referenced as an index, but it will just return undefined. The length of an array is mutable. If you make the array shorter than it already is, all the extra elements will be removed completely.</p>
+    <h3>Array Methods</h3>
+    <ul>
+        <li>The pop() method removes the last element and returns the new length of the array. This method removes the item without maintaining the space it occupies ie no undefined element will be present.</li>
+        <li>The push() method adds a new element to the end of an array and return the new length.</li>
+        <li>The shift() method removes the first element and returns the new length of the array. This method removes the item without maintaining the space it occupies i.e no undefined element will be present.</li>
+        <li>The unshift() method is similar to the push() method, but this appends a new item to the beginning of the array</li>
+        <li>The concat() method can be used to merge an array with one or more arrays. This doesn't change the length of the original array, it simply creates another array combining the two arrays. To change the length, assign the concatenated array to the original array us the assignment operator.</li>
+        <li>The join() method is used to turn the array into a string that comprises all the items in the array, separated by commas. You can choose a separator other than a comma by placing it inside the parentheses. Question: will this be a string datatype?</li>
+        <li>The slice() method creates a subarray; effectively chopping out a slice of an original array, starting at one position and finishing at another.</li>
+        <li>The splice() method removes items from an array then inserts new items in their place. This is a destructive operation as it changes the value of the array. If you want to remove a value completely, you can use the splice() method with a length of 1 and without specifying any values to add. array.splice(2, 1)//The third item is removed. The splice starts index 2 and only one item is removed.</li>
+        <li>The reverse() method reverses the order of an array permanently.</li>
+        
+    </ul>
+    <p>Multidimensional arrays contain one or more arrays. They are used to create a coordinate system. To acces values in them, we use to indices: one to refer to the item's place in the outer array, and one to refer to refer to its place in the inner array. The spread operator can be used to flatten Multidimensional arrays.</p>
+    <pre style="margin-left: -70px; background-color: lightgoldenrodyellow;">
+        <code>    
+            const summer = ['Jun', 'Jul', 'Aug'];
+            const winter = ['Dec', 'Jan', 'Feb'];
+            const nested = [ summer, winter ];
+            << [ [ 'Jun', 'Jul', 'Aug' ], [ 'Dec', 'Jan', 'Feb' ]]
+            const flat = [...summer, ...winter];
+            << [ 'Jun', 'Jul', 'Aug', 'Dec', 'Jan', 'Feb' ]
+        </code>
+    </pre>
+    <h3>Sets</h3>
+    <p>A set is a data structure that represents a collection of unique values, so it cannot include any duplicate values. If you try to add a value that is already contained in the set, then the operation is simply ignored. Multiple items can be added to the set by repeating the add() method- new Set.add(1).add(2)add(3); Multiple values can be added to a set in one go by placing them inside an array
+        that is provided as an argument<br> <pre style="margin-left: -70px; background-color: lightgoldenrodyellow;">
+            <code>const numbers = new Set([1,2,3]); </code>
+        </pre>
+        If a string is used as the argument in the set constructor then each character will be added as a separate element, with any repeated characters ignored. If you want to add separate words, you need to use the add() method. All non-primitive values, such as arrays and objects, are considered unique
+        values, even if they contain the same values. On the face of it, this appears to allow duplicate values appear in a set. Sets consider them as different objects. Use the spread operator to convert a set to an array. ==> const arr= [...definedSet]. You can also use the Array.from() method to convert. ==> const arr= Array.from(definedSet). So By combining this use of the spread operator with the ability to pass an array to the new Set() constructor, we now have a convenient way to create a copy of an array with any duplicate values removed:
+        <pre style="margin-left: -70px; background-color: lightgoldenrodyellow;">
+            <code> 
+                const duplicate = [3, 1, 4, 1, 5, 9, 2, 6 ,5,3,5,9];
+                << [ 3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5, 9 ]
+
+                const nonDuplicate = [...new Set(repeatedArray)];
+                << [ 3, 1, 4, 5, 9, 2, 6 ]
+            </code>
+        </pre>
+        Use the WeakSet method to solve this.
+    </p>
+    <h3>Maps</h3>
+    <p>MAps are a convenient way of keeping a list of objects. They are similar to dictioaries in other languages. Use the set() method to add a key and value pair to your map. The first value is a key and second, value. Multiple items can be added to the set by repeatedly calling the set() method in one go. Use the get() method to access a value. The has() method can be used to check if a particular key is in a map. This returns a boolean value of true or false. The number of key and value pairs in a map can be found by querying the size property. ==> map.size. A map can be created with multiple values by using a nested array as a parameter:  <pre style="margin-left: -70px; background-color: lightgoldenrodyellow;">
+        <code>
+            const heroes = new Map([ ['Clark Kent','Superman'],['Bruce Wayne', 'Batman']]);
+        </code> 
+    </pre>
+    The delete() method with the key specified in the parenthesis removes a key and value pair.
+    The clear method removes all key and value pairs. When you convert maps to array you have a multidimensional array.  Use the spread operator or the Array.from() method to do that.
+    </p>
+    <h3>Logic</h3>
+    <p>If the condition is not a boolean value, it will be converted to a boolean, depending on whether or not it is truthy or falsy. Ternary operators provide a shorthand way of writing conditionals.<pre style="margin-left: -70px; background-color: lightgoldenrodyellow;">
+        <code>
+            condition ? (//code to run if condition is true) : (//codeto run if condition is false)
+        </code> 
+    </pre>
+    Using ternary operator with template string is shorter.<pre style="margin-left: -70px; background-color: lightgoldenrodyellow;">
+        <code>
+            console.log(`n is a ${(n%2 === 0)? 'even' : 'odd'} number`);
+        </code> 
+    </pre>
+    </p>
+    <h2>Functions</h2>
+    <p>All functions have a read-only property called name. If too many arguments are provided when a function is invoked, the function will work as normal and the extra arguments will be ignored. Every function has a special variable called arguments. This is an array-like object that contains every argument passed to the function when it is invoked. This is not array and cannot have all array properties or methods. To borrow array methods for an argument, use the rest operator. It can be used for multiples arguments without havivg to specify parameters in the parenthesis. The rest operator create an array of arguments that are available inside the body of the function Default paramenters are used as values that will be used by the function if no arguments are provided. Default parameters should always come after non-default parameters, otherwise default values will always have to be entered anyway. The forEach method of an array works like a loop. It loops through the array and invokes a callback function using each value as an argument. It executes the function provided for every array item.</p>
+    <br>
+    <section>
+        <h2>Exercise</h2>
+        <a href="./example/quiz1.html">Click here to view a working example</a>
+      </section>
+    
+</body>
+<script src="./example/testScript.js"></script>
+</html>
