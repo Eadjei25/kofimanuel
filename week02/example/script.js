@@ -29,7 +29,7 @@ function start(quiz){
         }
     }
     function gameOver(){
-        alert(`Game Over, you scored ${score} point${score> 1 ? 's' : ''} out of ${quiz.length} total points`);
+        alert(`Game Over, you scored ${score} point${(score> 1) ? 's' : ''} out of ${quiz.length} total points`);
     }
 }
 start(quiz);

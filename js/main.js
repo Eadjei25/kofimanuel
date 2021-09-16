@@ -16,25 +16,67 @@ const links= [
         title: 'Week 3 Link'
     },
     {
-        label: 'week04 Notes and Exercises',
+        label: 'Week04 Notes and Exercises',
         url: 'week04/index.html',
         title: 'Week 4 Link'
     },
     {
-        label: 'week05 Notes and Exercises',
+        label: 'Week05 Notes and Exercises',
         url: 'week05/index.html',
         title: 'Week 5 Link'
     },
     {
-        label: 'week06 Challenge and Notes',
+        label: 'Week06 Challenge and Notes',
         url: 'week06/index.html',
         title: 'Week 6 Link'
     },
     {
-        label: 'week07 Notes and Exercises',
+        label: 'Week07 Notes and Exercises',
         url: 'week07/index.html',
         title: 'Week 7 Link'
+    },
+    {
+        label: 'Week08 Notes an Exercises',
+        url: '/week08/',
+        title: 'Week 8 Link',
+    },
+    {
+        label: 'Week09 Notes and Exercises',
+        url: 'week09/',
+        title: 'Week 9 Link'
+
+    },
+    {
+        label: 'Week10 Notes and Exercises',
+        url: 'week10/',
+        title: 'Week 10 Link'
+
+    },
+    {
+        label: 'Week11 Notes and Exercises',
+        url: 'week11/',
+        title: 'Week 11 Link'
+
+    },
+    {
+        label: 'Week12 Notes and Exercises',
+        url: 'week12/',
+        title: 'Week 12 Link'
+
+    },
+    {
+        label: 'Week13 Notes and Exercises',
+        url: 'week13/',
+        title: 'Week 13 Link'
+
+    },
+    {
+        label: 'Week14 Notes and Exercises',
+        url: 'week14/',
+        title: 'Week 14 Link'
+
     }
+    
 ]
 function contentTable(){
     for(let i=0; i < links.length; i++){
