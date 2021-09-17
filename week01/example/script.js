@@ -18,7 +18,7 @@ function displayStory(){
     document.getElementById('display').innerHTML= storyHTML;
 }	
 
-//Delete the data
+//This deletes the data
 function deleteStory(){
     let storyName= document.getElementById('name').value;
     let assure= window.confirm('Do you want to delete your story');
