@@ -248,3 +248,66 @@ function squared(x){
 
 const mAp= [1, 2, 3, 4]
 mAp.map(squared)
+
+{
+    //increment and decrement
+    let a= 2, b= 3;
+    a= ++b;
+    console.log(a);
+}
+
+
+//Testing the pre and post increment operators
+let point= 200;
+console.log(point++);
+
+/**Infinity
+ Used to represent a number too big for JS
+ Infinity can also be maintained by dividing by zero
+**/
+console.log(2e308);//This will be an Infinity
+{//Trying the Boolean function to check boolean values
+    if(Boolean(-0)== true){
+        console.log('TRUE');
+    }
+    else {
+        console.log('FALSE');
+    }
+
+    let point= 3;
+    console.log(typeof !point);
+}
+
+console.log(Number('5')===5)//Using hard equality ensures you convert string to number to avoid coercion.
+
+let avengers = ['Captain America', 'Iron Man', 'Thor', 'Hulk', 'Hawkeye', 'Black Widow'];
+let jla= ['Batman', 'Superman', 'Wonder Woman', 'Cyborg', 'Aquaman', 'Martian Manhunter', 'Green Lantern']
+avengers= [...avengers, ...jla]// The spread operator is an alternative to concat() method with assignment--> avengers= avengers.concat(jla)
+
+/*Creating Sets
+The add() method is used to add values
+The size method is used to find the number of values
+The has(value) method is used to check for a value and returns a boolean value
+The delete(value) method is used to remove values
+The clear() method os used to remove all values
+The Array.from() function can alslo be used to convert sets to array
+*/
+const sets= new Set();
+sets.add(100);
+console.log(sets);
+const sets2= new Set(avengers);
+console.log(sets2);
+const sets3= new Set();
+sets3.add('value1').add('value2').add('value3').add('value4');
+const setsArray= [...sets3];//One way of converting sets to array
+jla.concat([...sets3]);//Another way of convering sets to array
+const setsArray2= Array.from(sets3)
+//By combining this use of the spread operator with the ability to pass an array to the new Set() constructor, we now have a convenient way to create a copy of an array with any duplicate values removed
+const duplicate = [3, 1, 4, 1, 5, 9, 2, 6 ,5,3,5,9];
+const nonDuplicate = [...new Set(duplicate)];
+
+
+
+
+
+

@@ -28,8 +28,7 @@ function deleteStory(){
         window.alert('Removed succesfully');
     }
     else {
-        window.alert('Incorrectname or no input');
+        window.alert('Incorrect name or no input');
     }
 }
-
 //To avoid declaring the same vars, you can declare the var outside of a block and access it inside the blocks you need it.
