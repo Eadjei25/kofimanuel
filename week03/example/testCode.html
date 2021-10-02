@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+   <meta charset="UTF-8" />
+   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <title>Week 1</title>
+  </head>
+  <body>
+   <h2>Welcome to Week 3</h2>
+   <h2>Objects First</h2>
+   <h3>Problem</h3>
+   <p>You are working on a Contact Manager app.
+    You have created the contact object constructor, which has two arguments, name and number.
+    You need to add a print() method to the object, which will output the contact data to the console in the following format: name: number
+    The given code declares two objects and calls their print() methods. Complete the code by defining the print() method for the objects.</p>
+    <p>See code below</p>
+    <code>
+      <pre style="border-left: 5px solid yellow;">
+      function contact(name, number) {
+        this.name = name;
+        this.number = number;
+        this.print= function () {
+          console.log(this.name+": "+this.number);
+        };    
+      }
+      var a = new contact("David", 12345);
+      var b = new contact("Amy", 987654321)
+      a.print();
+      b.print();
+      </pre>
+    </code>
+
+    <h2>Core Objects</h2>
+    <h3>Arrays</h3>
+    <p>To get a random number between 1-10, use Math.random(), which gives you a number between 0-1. Then multiply the number by 10, and then take Math.ceil() from it:<br> <code>Math.ceil(Math.random() * 10).</code></p>
+
+    <p>Hey Emmanuel, You nailed the assignment! About making the header sticky you would need to modify the HTML to create an extra div element just around the title, and nav links with that element position: sticky, top: some-unit. I love that you are considering items like this to enhance the user experience. Very well done. To study this more, Sticky relies very heavily on what is called a parent/child relationship. Sticky elements only work with immediate children. Hope that helps. It wasn't a requirement and we didn't teach it yet, but for future reference, you might want to leverage CSS variables which is a fully supported browser standard now. It's a nice way to demonstrate you keep up to date with the latest techniques in programming in any interview. Just like your consideration of UX showed me :-) Well done, sir. Bro Avalon
+    </p><br>
+      <div></div>
+     <h3>Objects Summary</h3>
+       <p>Functions that are stored in object properties are called “methods”.</p> 
+        <p>Methods allow objects to “act” like object.doSomething().</p>
+        <p>Methods can reference the object as this.</p>
+        
+        <p>When a function is declared, it may use this, but that this has no value until the function is called.</p>
+        <p>A function can be copied between objects.</p>
+        <p>When a function is called in the “method” syntax: object.method(), the value of this during the call is object.</p>
+        <p>Objects are often used to keep any related information and functionality together in the same place. For example, if you wrote functions that found the perimeter and area of a square, you might want to group them together as methods of the same object that also included a length property.</p>
+        <p>All objects are mutable at any time when a program is running. This means that its properties and methods can be changed or removed, and new properties and methods can be added to the object, even if it was declared using const .</p>
+        <p>ES6 provided a shorthand method of creating objects if a property key is the same as a variable name that the property value is assigned to:</p>
+        <pre>// short ES6 way
+      const ironMan = { name, realName };</pre>
+      <p>Dot notation is much more common, but bracket notation has a few advantages: it's the only way to access nonstandard property and method names that don’t follow the variable naming rules. It also lets you evaluate an expression and use it as the property key:</p>
+      <pre>superman["real" + " " + "name"] // the property is built using string concatenation</pre>
+      <p>The value of a property has always been allowed to be a JavaScript expression. In the example below a ternary operator is used to return a true or false value for the hero property depending on the value of the bewitched variable:<br><pre>const bewitched = true;
+        const captainBritain = { name: 'Captain Britain', hero: bewitched ? false : true };
+        captainBritain
+     { name: 'Captain Britain', hero: false }</pre></p>
+     <p>It’s even possible for an object to contain other objects. These are known as <b>nested</b> objects.</p>
+     <pre><code>
+        const jla = {
+            superman: { realName: 'Clark Kent' },
+            batman: { realName: 'Bruce Wayne' },
+            wonderWoman: { realName: 'Diana Prince" },
+            flash: { realName: 'Barry Allen' },
+            aquaman: { realName: 'Arthur Curry' },
+        }
+     </code></pre>
+     <p>JSON methods(parse(), stringify()) are particularly useful when it comes to sending data to, and receiving data from, a web server using Ajax requests (see Chapter 13) – or when using localStorage to store data on a user’s machine (see Chapter 14). JSON data is easy to exchange between different services, as most languages and protocols are able to interpret data as strings of text – and they only need to be stored as a basic text file.</p>
+
+        
+  <script>
+  //Object Initialiser
+   document.write('<br><h3>Code Outcomes</h3>');
+   document.write('JS Objects<em>-&nbsp;&nbsp;Just print</em> <br>');
+   var kofi = {
+    name: 'Kofi',
+    favColor: 'Blue',
+    height: 189
+   }
+   document.write(kofi.favColor.length ='<br>');
+   //looping through all properties with for in loop
+   for(const key in kofi){
+       document.write(key+': '+kofi[key]+'<br>')
+   }
+
+   //Object Constructor
+   function persons(name, age, color, height){
+    this.name= name;
+    this.age= age;
+    this.favColor= color;
+    this.height= height;
+   }
+   var person1= new persons('Ama', 23, 'Rose', 175);
+   var person2= new persons('Jojo', 26, 'Blue', 195);
+
+   document.write('<br>'+person2.name);
+   //Defining a method in an object constructor
+   function heroes(name, power, affiliation, alias, height){
+    this.superhero= name;
+    this.power= power;
+    this.team= affiliation;
+    this.alias= alias;
+    this.height= height;
+    this.changeHeight= function(definedHeight){
+     this.height= definedHeight;
+    }
+   }
+   var hero1= new heroes('King Shark', 'Superhuman Strength', 'Suicide Squad', 'Nanoe', 280);
+   document.write('<br>'+hero1.superhero);
+   hero1.changeHeight(234);
+   document.write('<br>'+hero1.height);
+// Define a method outside of an object constructor
+   function villainsSquad(villain, alias, power){
+     this.name= villain;
+     this.alias= alias;
+     this.powers= power;
+     this.age= bornYear(); //it is not necessary to write the function's parenthesis
+     this.team= affiliate();
+   }
+   function bornYear(age=60){
+     let year= 2020 - age;
+     return year;
+   }
+   function affiliate(){
+     return 'X-Men';
+   }
+  
+   var villain1= new villainsSquad('Cain Marko', 'Juggernaut', 'infinite strength');
+   document.write('<br>'+villain1.alias);
+   document.write('<br>'+villain1.team+'<br><hr><br>');
+   document.write('JS Arrays<br>');
+   var villains= new Array();
+   villains[0]= 'Juggernaut';
+   villains[1]= 'Black Tom Cassidy';
+   villains[2]= 'Fire Fist';
+   villains[3]= 'Rhyno'
+   document.write(villains.length);
+   document.write(Math.sqrt(81)+'<br>');
+   //Using named indexes fo arrays turns them to ojects 
+   var arr3= [];
+   arr3['name']= 'Hulk';
+   arr3['age']= 100;
+   document.write(arr3.name +'<br>');
+   function time(){
+    var d= new Date();
+    var h= d.getHours();
+    var m= d.getMinutes();
+    var s= d.getSeconds();
+    var display= document.getElementsByTagName('div');
+    display[0].innerHTML= `${h}: ${m}: ${s}`;
+   }
+   setInterval(time, 1000);
+   //Just the object initialiser and defining methods
+   var user = {
+       name: 'Kofi',
+       age: 23
+   }
+   user.sayHello= function(){
+       document.write('Hello<br>');
+   }
+   user.sayHello();
+   //Assigning a pre declared function as method/property to an object
+  var user2= {
+      name: 'Joe',
+      age: 20
+  }
+  function sayHi(){
+      document.write('Hey there<br>');
+  }
+  user2.sayHi= sayHi;//parenthesis of the function is not necessary
+  user2.sayHi();
+
+  var user3= {
+      name: 'Emmanuel',
+      age: 23,
+      sayNameOrAge() {
+          document.write(this.name);
+      }
+  }
+  user3.sayNameOrAge()
+
+  
+
+  //If we reference this from an arrrow function, it’s taken from the outer “normal” function.That’s a special feature of arrow functions, it’s useful when we actually do not want to have a separate this. For instance, here arrow() uses this from the outer usersayHi() method:.
+
+  let user5 = {
+  firstName: "<br>Ilya",
+  sayHi() {
+    let arrow = () => document.write(this.firstName);
+    arrow();
+  }
+};
+
+user5.sayHi();
+
+//object with computed property
+    const hulk = { name: 'Hulk', ['catch' + 'Phrase']: 'Hulk Smash!' };
+
+    const jla = {
+        superman: { realName: 'Clark Kent' },
+        batman: { realName: 'Bruce Wayne' },
+        wonderWoman: { realName: 'Diana Prince' },
+        flash: { realName: 'Barry Allen' },
+        aquaman: { realName: 'Arthur Curry' },
+    }
+    document.write('<br>'+jla.aquaman['realName']);
+    const thor = { name: 'Thor' 
+    // more properties here
+    };
+    const cloneThor = thor;//the object is assigned here to a var which means any change made to both side will affect the main object
+
+    function greet({greeting,name,age}) {
+    return `${greeting}! My name is ${name} and I am ${age} years old.`;
+    }//Objects passed as function parameters allows the arguments to be provided by name and in any order. The arguments can be passed like this
+    greet({ greeting: `What's up dude`, age: 10, name: `Bart` });
+    //Default values can be set to the parameters in the function using assignment operator and can also be overidden if you want to change them in the argument.
+
+    //Code to return number between 1 and the number of sides of a dice using the this keyword in an object
+    const dice = {
+        sides: 6,
+        roll() {
+            return Math.floor(this.sides * Math.random()) + 1;
+        }
+    }   
+  </script>
+  
+</body>
+</html>
