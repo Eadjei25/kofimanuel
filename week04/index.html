@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1>My JS Journey- Week04</h1>
+    </header>
+    <nav>
+        <ul>
+            <li>Forms</li>
+            <li>Object Oriented JavaScript</li>
+            <li>Modules</li>
+        </ul>
+    </nav>
+    <main>
+        <section>
+            <h2>Forms</h2>
+            <p>A form element contains form controls such as input fields, select menus and buttons.</p>
+            <h3>Accessing Forms</h3>
+            <p>Any of the DOM properties <code>document.forms</code>, <code>document.getElementsByTagName()</code> and <code>document.getElementsByClassName()</code> return an array of forms. The index notation is used to access the prefered form. Example: 
+            <pre><code>const form = document.getElementsByTagname('form')[0];</code></pre></p>
+            <p>Forms can also be accessed uing their name. Eg: <pre><code>const form = document.forms.search;</code></pre> or using the bracket notation: <pre><code>const form = document.forms['search'];
+            </code></pre></p>
+            <p>Accessing form controls or element in a form can be done using the <code>elements</code> property of the form object that returns an array of all the element in a form. Form controls can also be accessed using their name attribute value as if it was a property. This is done sing the dot or brackets notation</p> 
+            <h3>Form Properties and Methods</h3>
+            <p>Reset buttons are generally considered poor for usability, as they are too easy to click and then wipe out all the data that’s been entered. So think very carefully before using one in a form</p>
+
+            
+        </section>
+    </main>
+    <footer></footer>
+</body>
+</html>

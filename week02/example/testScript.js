@@ -283,7 +283,6 @@ console.log(Number('5')===5)//Using hard equality ensures you convert string to 
 let avengers = ['Captain America', 'Iron Man', 'Thor', 'Hulk', 'Hawkeye', 'Black Widow'];
 let jla= ['Batman', 'Superman', 'Wonder Woman', 'Cyborg', 'Aquaman', 'Martian Manhunter', 'Green Lantern']
 avengers= [...avengers, ...jla]// The spread operator is an alternative to concat() method with assignment--> avengers= avengers.concat(jla)
-
 /*Creating Sets
 The add() method is used to add values
 The size method is used to find the number of values
