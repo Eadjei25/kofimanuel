@@ -27,7 +27,7 @@
             const name = { value: 'Alexa' };
             // attempt to reassign to another object
             name = { value: 'Siri' }
-            << TypeError: Assignment to constant variable.
+            // TypeError: Assignment to constant variable.
         </code>
     </pre></p>
     <h3>Scopes</h3>
@@ -57,9 +57,9 @@
             const summer = ['Jun', 'Jul', 'Aug'];
             const winter = ['Dec', 'Jan', 'Feb'];
             const nested = [ summer, winter ];
-            << [ [ 'Jun', 'Jul', 'Aug' ], [ 'Dec', 'Jan', 'Feb' ]]
+            // [ [ 'Jun', 'Jul', 'Aug' ], [ 'Dec', 'Jan', 'Feb' ]]
             const flat = [...summer, ...winter];
-            << [ 'Jun', 'Jul', 'Aug', 'Dec', 'Jan', 'Feb' ]
+            // [ 'Jun', 'Jul', 'Aug', 'Dec', 'Jan', 'Feb' ]
         </code>
     </pre>
     <h3>Sets</h3>
@@ -72,10 +72,10 @@
         <pre style="margin-left: -70px; background-color: lightgoldenrodyellow;">
             <code> 
                 const duplicate = [3, 1, 4, 1, 5, 9, 2, 6 ,5,3,5,9];
-                << [ 3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5, 9 ]
+                // [ 3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5, 9 ]
 
                 const nonDuplicate = [...new Set(repeatedArray)];
-                << [ 3, 1, 4, 5, 9, 2, 6 ]
+                // [ 3, 1, 4, 5, 9, 2, 6 ]
             </code>
         </pre>
         Use the WeakSet method to solve this.
@@ -108,7 +108,7 @@
         <h2>Exercise</h2>
         <a href="./example/quiz1.html">Click here to view a working example</a>
       </section>
-    
+      <script src="./example/testScript.js"></script>
 </body>
-<script src="./example/testScript.js"></script>
+
 </html>

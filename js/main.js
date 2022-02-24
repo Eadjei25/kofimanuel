@@ -2,42 +2,42 @@
 const links= [
     {
         label: 'Week01 Notes and Exercises',
-        url: 'week01/index.html',
+        url: 'week01/',
         title: 'Week 1 link'
     },
     {
         label: 'Week02 Notes and Exercises',
-        url: 'week02/index.html',
+        url: 'week02/',
         title: 'Week 2 Link'
     },
     {
         label: 'Week03 Notes and Exercises',
-        url: 'week03/index.html',
+        url: 'week03/',
         title: 'Week 3 Link'
     },
     {
         label: 'Week04 Notes and Exercises',
-        url: 'week04/index.html',
+        url: 'week04/',
         title: 'Week 4 Link'
     },
     {
         label: 'Week05 Notes and Exercises',
-        url: 'week05/index.html',
+        url: 'week05/',
         title: 'Week 5 Link'
     },
     {
         label: 'Week06 Challenge and Notes',
-        url: 'week06/index.html',
+        url: 'week06/',
         title: 'Week 6 Link'
     },
     {
         label: 'Week07 Notes and Exercises',
-        url: 'week07/index.html',
+        url: 'week07/',
         title: 'Week 7 Link'
     },
     {
         label: 'Week08 Notes an Exercises',
-        url: '/week08/',
+        url: 'week08/',
         title: 'Week 8 Link',
     },
     {
@@ -50,34 +50,29 @@ const links= [
         label: 'Week10 Notes and Exercises',
         url: 'week10/',
         title: 'Week 10 Link'
-
     },
     {
         label: 'Week11 Notes and Exercises',
         url: 'week11/',
         title: 'Week 11 Link'
-
     },
     {
         label: 'Week12 Notes and Exercises',
         url: 'week12/',
         title: 'Week 12 Link'
-
     },
     {
         label: 'Week13 Notes and Exercises',
         url: 'week13/',
         title: 'Week 13 Link'
-
     },
     {
         label: 'Week14 Notes and Exercises',
         url: 'week14/',
         title: 'Week 14 Link'
-
     }
-    
 ]
+/*
 function contentTable(){
     for(let i=0; i < links.length; i++){
         let elem= document.getElementsByTagName('ol');
@@ -91,3 +86,15 @@ function contentTable(){
     }
 }
 contentTable();
+*/
+
+const elem= document.getElementsByTagName('ol');
+links.forEach(link => {
+    const list= document.createElement('li');
+    const anchor= document.createElement('a');
+    anchor.setAttribute('href', link.url);
+    anchor.setAttribute('title', link.title);
+    anchor.innerText= link.label;
+    list.appendChild(anchor);
+    elem[0].appendChild(list);
+})
