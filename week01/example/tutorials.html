@@ -8,12 +8,33 @@
 </head>
 <body>
     <script>
-        const character= {
+        //object literal
+        const char= {
             name: 'Cain Marko',
             alias: 'Juggernaut',
             height: 289.56,
             affiliation: 'Brotherhood'
         }
+        //object constructor
+        function changeName(preferredCharacterName){
+            this.name= preferredCharacterName;
+        } 
+        function character(name, nickname, affiliation){
+            this.name= name;
+            this.alias= nickname;
+            this.team= affiliation;
+            //Adding a method to the object
+           
+            this.changeName= changeName;
+        }
+        
+        //using the new keyword to create new instances of object from the object constructor
+        let char1= new character('Diana Prince', 'wonder woman', 'Justice league');
+        let char2= new character('Clark Kent', 'Superman', 'Justice League');
+        let char3= new character('Barry Allen', 'The Flash', 'Justice League');
+        //Methods- properties that ar functions
+        char3.changeName('Wally West');
+
     </script>
 </body>
 </html>
