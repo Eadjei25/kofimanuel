@@ -5,8 +5,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        button {
+            width:100%;
+            font-size: 22px;
+        }
+        div {
+            text-align: center;
+            padding: 100px ;
+        }
+        div span {
+            display: block;
+            font-size: 150px;
+            border: 2px solid black;
+            margin-top: 10px;
+            border-radius: 10px;
+            
+        }
+    </style>
 </head>
 <body>
+    <button type="button">Roll the dice</button>
+    <div>
+        
+    </div>
     <script>
         //object literal
         const char= {
@@ -16,18 +38,16 @@
             affiliation: 'Brotherhood'
         }
         //object constructor
-        function changeName(preferredCharacterName){
-            this.name= preferredCharacterName;
-        } 
         function character(name, nickname, affiliation){
             this.name= name;
             this.alias= nickname;
             this.team= affiliation;
             //Adding a method to the object
-           
+            function changeName(preferredCharacterName){
+                this.name= preferredCharacterName;
+            }//This can be put outside the object constructor
             this.changeName= changeName;
         }
-        
         //using the new keyword to create new instances of object from the object constructor
         let char1= new character('Diana Prince', 'wonder woman', 'Justice league');
         let char2= new character('Clark Kent', 'Superman', 'Justice League');
@@ -35,6 +55,30 @@
         //Methods- properties that ar functions
         char3.changeName('Wally West');
 
+       function marvel(name, nickname, affiliation){
+           this.name= name;
+           this.allias= nickname;
+           this.team= affiliation;
+           this.nameChanger= anyname => this.name= anyname;//a simple method created using an anonymous arrow function and assigning it to the propertyof the object that will be returned by the object constructor
+           this.present= intro;
+       }
+       function intro(type) {
+            return `My name is ${this.name} and I am ${type}`;
+        }
+       let member1= new marvel('Thor Odinson', 'Thor', 'Asgardians');
+       let member2= new marvel('Steve Rogers', 'Cap', 'Avengers');
+       member1.nameChanger('Thunder God');//The name will be changed from Thor Odinson to Thunder God
+       member2.present('human');//with argument
+
+
+       const dice= {
+           sides: 6,
+           roll() {
+               return Math.floor(this.sides * Math.random() + 1)
+           }
+       }
+       let btn= document.getElementsByTagName('button');
+       btn[0].addEventListener('click', () => document.getElementsByTagName('div')[0].innerHTML= `you rolled <br><span>${dice.roll()}<span>`, false)
     </script>
 </body>
 </html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./styles.css">
+    <title>Week02 Notes</title>
+    
+</head>
+<body>
+    <h1>My JS Journey- Week02</h1>
+    <h2>The Window Object</h2>
+    <p>The window object is a global object in JavaScript. Because it is global, any global variables or functions can be used as properties or methods. The window object contains the webpage- the document object.</p>
+    <h3>Browser Object Model</h3>
+    <p>BOM for short is a collection of properties and method that contain information about the computer and browser screen. The properties and methods are made available through the window object. If you don't know the name of the global object, you can also refer to it using the keyword this in the global scope. The following code provides a quick way of assigning the variable global to the global object:
+
+        <pre style="margin-left: -70px; background-color: lightgoldenrodyellow;">
+            <code>
+                // from within the global scope
+                const global = this;    
+            </code>
+        </pre>
+    </p>
+    <h3>The Document Object</h3>
+    <p>The setInterval() method works like a loop but with a specified timing.</p> 
+    <p>The documenet object is contained the window object. This object has properties and methods that deal with the page that has been loaded into the window.</p><br>
+    <h3>The Timing methods</h3>
+    <p>Be careful when using a method that uses the this keyword with either of these timing methods. The binding of this is set to the window object, rather than the method's object, so it can get some unexpected results.</p>
+
+
+    <h3>Questions</h3>
+    <p>The <code>find()</code> and <code>home()</code> methods don't work on my machine</p>
+    <p>If you use loop with setTimeout, can the clearTimeout method be used to stop it?</p>
+
+    <!--
+        <form  method="GET" action="https://google.com">
+        <input id="reseter" type="text"><br>
+        <button type="button" onclick="resetForm1()">JS Reset</button>
+        <input type="button" value="JS reset2">
+        <input type="reset" value="HTML Reset1">
+        <button type="reset">HTML Reset2</button>
+        <input type="submit" value="Send">
+    </form> 
+    <br><br>
+
+     <h2>Exercise</h2>
+    <a href="./example/timerNinjaQuiz.html">Click here to view this week's exercise</a>
+
+    <div>
+
+    </div><br><br>
+    <button id="btn">Stop madness</button>
+    -->
+    
+    <!--the Print Method-->
+    <h3>Example</h3>
+    <p>Click the button below to print this page</p>
+    <form>
+        <input type="button" value="Print this page" onclick="print();">
+    </form>
+
+    <h2>The <code>template</code> HTML element</h2>
+    <p>A mechanism for holding HTML that is not to be rendered immediately but be instantiated subsequently during thduring runtime using JavaScript</p>
+   
+</body>
+<script src="testScript.js"></script>
+
+</html>
