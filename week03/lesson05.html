@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson05- Forms</title>
+</head>
+<body>
+    <header>
+        <h1>My JS Journey- Week03</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Forms</h2>
+            <p>A form element contains form controls such as input fields, select menus and buttons.</p>
+            
+            <h3>Accessing Forms</h3>
+            <p>Any of the DOM properties <code>document.forms</code>, <code>document.getElementsByTagName()</code> and <code>document.getElementsByClassName()</code> return an array of forms. The index notation is used to access the prefered form. Example: 
+            <pre><code>const form = document.getElementsByTagname('form')[0];</code></pre></p>
+            <p>Forms can also be accessed uing their name. Eg: <pre><code>const form = document.forms.search;</code></pre> or using the bracket notation: <pre><code>const form = document.forms['search'];
+            </code></pre></p>
+            <p>Accessing form controls or element in a form can be done using the <code>elements</code> property of the form object that returns an array of all the element in a form. Form controls can also be accessed using their name attribute value as if it was a property. This is done sing the dot or brackets notation</p> 
+            <h3>Questions</h3>
+            <p>The <code>form.elements</code> property does't access any other elements in the form but just the form controls. Why?</p>
+            <h3>Form Properties and Methods</h3>
+            <ul>
+                <li><code>form.submit()</code></li>
+                <li><code>form.reset()</code></li>
+                <li><code>form.action()</code></li>
+            </ul>
+            <p>HTML attributes can be used as alternatives</p>
+            <p>Reset buttons are generally considered poor for usability, as they are too easy to click and then wipe out all the data that’s been entered. So think very carefully before using one in a form</p>
+
+            <h3>Form Events</h3>
+            <p>The focus and blur events are handy when you want to change the value in a field when it is focused and bring it back when it is blurred- when not in focus</p>
+            <h3>Using the formData Object</h3>
+            <p>This is used to cut down the amount of code when parsing the form using JavScript.</p>
+            <p>Use the name attribute for your input elements for the formData() object to work.</p> 
+            
+        </section>
+    </main>
+    <footer></footer>
+</body>
+</html>
