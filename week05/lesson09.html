@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson09</title>
+</head>
+<body>
+    <h1>My JS Journey- Week04</h1>
+    <h2>Lesson09</h2>
+
+    <h2>Data- attribute</h2>
+    <p>The data attribute allows you to embed a value using custom attributes that are gnored by the browser. The sole purpose is to be used by a JavaScript program. It take an optional string value</p>
+    <pre>
+        <code>
+            data-powers = 'flight superSpeed'
+            data-rating = '5' 
+            data-dropdown 
+            data-user = 'DAZ' 
+            data-max-length = '32'
+        </code>
+    </pre>
+    <p>Data attributes can be used to identy HTML elements</p>
+    <h3>Accessing a value from a data- attribute</h3>
+    <h4>Example</h4>
+
+    <pre>
+        <code>
+            &lt;div id='hero' data-powers='flight superSpeed'&gt;
+                Superman
+            &lt;/div&gt;
+        </code>
+        <code>
+            const superman = document.getElementById('hero');
+            const powers = superman.dataset.powers;
+        </code>
+    </pre>
+    <p>The dataset property can be used to get the value</p>
+    <button>See value below</button>
+    <div></div>
+    <script src="main.js"></script>
+</body>
+</html>
