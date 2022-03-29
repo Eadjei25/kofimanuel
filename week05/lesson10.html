@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Lesson10</title>
+    <style>
+      p{
+        font-size: 22px;
+      }
+    </style>
+	</head>
+  
+	<body>
+		<header>
+			<h1>My JavaScript Journey Lesson10</h1>
+			<h2>Callbacks, High Order Functions and the Call Stack</h2>
+		</header>
+		<main>
+			<section>
+				<p>
+					Functions are more when they are reusable with more generic input or arguments. See an example of a simple function below. This function takes an array as an argument and loop through each value, multiplying each value by 2 and pushing each multiplication and assigning the new array or the array with changed values to a previously declared empty array.  So that empty array will have the product of each element in the array you provided. 
+          <pre style="background: bisque; border-left: 5px solid green;">
+            <code style="font-size: 18px;">
+              function copyArrayAndMultiplyBy2(array) {
+                let output = [];
+                for (let i = 0; i < array.length; i++) {
+                  output.push(array[i] * 2);
+                }
+                return output;
+              }
+              const theArray = [1, 2, 3];
+              let result = copyArrayAndMultiplyBy2(theArray);
+            </code>
+          </pre>
+          Click the button below to see the result of the array
+          <button style="display: block; font-size: 20px;">Pop up result</button>
+				</p>
+        <p>Function callbacks allow more functionalities to be passed around in a high order functions. Callbacks are functions declared and called as arguments in another function. Callbacks make function more reusable. For example, another function can be created to give an instruction to the function to perform.
+          <pre style="background: bisque; border-left: 5px solid green;">
+            <code style="font-size: 18px;">
+              //The High Order Function- A generalized function that accepts instructions written in another function
+              function copyArrayAndManipulate(array, instruction) {
+                let output = [];
+                for (let i = 0; i < array.length; i++) {
+                  output.push(instruction(array[i]));
+                }
+                return output;
+              }
+
+              //The callback. It will be passed as an argument to the function
+              function multiplyBy2(input){
+                return input * 2;
+              }
+              let result= copyArrayAndManipulate([1,2,3], multiplyBy2);)
+            </code>
+          </pre>
+          Click the button below to see the result of the array
+          <button style="display: block; font-size: 20px;">Pop up result</button>
+        </p>
+        <p>Functions are first-class object. They can coexist and be treated like other objects. They can take properties. They have one property that primitive objects don't have ie they can be called or invoked</p>
+			</section>
+		</main>
+		<script>
+			function copyArrayAndMultiplyBy2(array) {
+				let output = [];
+				for (let i = 0; i < array.length; i++) {
+					output.push(array[i] * 2);
+				}
+				return output;
+			}
+			const theArray = [1, 2, 3];
+			let result = copyArrayAndMultiplyBy2(theArray);
+      
+      document.getElementsByTagName('button')[0].addEventListener('click', ()=>alert(result))
+
+
+      //
+      function copyArrayAndManipulate(array, instruction) {
+        let output = [];
+        for (let i = 0; i < array.length; i++) {
+          output.push(instruction(array[i]));
+        }
+        return output;
+      }
+              
+      function multiplyBy2(input){
+        return input * 2;
+      }
+      let result2= copyArrayAndManipulate([1,2,3], multiplyBy2);
+      document.getElementsByTagName('button')[1].addEventListener('click', ()=>alert(result2))
+		</script>
+	</body>
+</html>
