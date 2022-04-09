@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta title="Comida | Home" />
+		<meta description="Comida website home page" />
+		<link rel="stylesheet" href="css/normalize.css" />
+		<link rel="stylesheet" href="css/style.css" />
+		<link rel="icon" type="image/x-icon" href="images/favicon.png" />
+		<script type="module" src="js/main.js"></script>
+		<script>
+			function toggleNav() {
+				var updateElement = document.getElementById("menu");
+				//toggle adds a class if it's not there or removes it if it is.
+				updateElement.classList.toggle("open");
+			}
+		</script>
+	</head>
+	<body>
+		<header>
+			<div id="main-header"></div>
+			<div id="menu">
+				<div class="menu-icon" onclick="toggleNav()">
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+				<ul>
+					<li>About</li>
+					<li>Contact</li>
+				</ul>
+			</div>
+		</header>
+		<div class="center content">
+			<main>
+				<form>
+					<input type="text" placeholder="Search Your Recipe" />
+					<button type="submit">Search</button>
+				</form>
+				<div id="recipes-div"></div>
+			</main>
+			<footer id="main-footer"></footer>
+		</div>
+	</body>
+</html>
