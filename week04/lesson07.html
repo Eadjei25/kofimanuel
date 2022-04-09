@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<header>
+			<h1>My JS Journey- Week04</h1>
+			<h2>Lesson07</h2>
+		</header>
+		<main>
+			<section>
+				<h3>Further Functions</h3>
+				<p>
+					The dynamic nature of JavaScript means that a function is able to not
+					only call itself, but define itself, and even redefine itself. This is
+					done by assigning an anonymous function to a variable that has the
+					same name as the function.
+				</p>
+				<p>
+					If the function is also assigned to another variable, this variable
+					will maintain the original function definition and not be rewritten.
+					This is because the original function is assigned to a variable, then
+					within the function, a variable with the same name as the function is
+					assigned to a different function.
+				</p>
+				<h5>Recursive Functions</h5>
+				<p>
+					A recursive function is one that invokes itself until a certain
+					condition is met. It’s a useful tool to use when iterative processes
+					are involved.
+				</p>
+				<h5>Callbacks</h5>
+				<p>
+					They’re functions passed to other functions as arguments and then
+					invoked inside the function they are passed to.
+				</p>
+				<p>
+					JavaScript is a single-threaded environment, which means only one
+					piece of code will ever be processed at a time. This may seem like a
+					limitation, but non-blocking techniques can be used to ensure that the
+					program continues to run.
+				</p>
+				<h5>Generalized Function</h5>
+				<p>
+					Callbacks can be used to build more generalized functions. Instead of
+					having lots of specific functions, one function can be written that
+					accepts a callback
+				</p>
+			</section>
+			<section>
+				<h3>CSS3 Transforms and Transitions</h3>
+				<p>
+					The CSS3 transform property lets you translate, rotate, scale, and/or
+					skew any element on the page, CSS3 gives you unprecedented control
+					over many more aspects of the element’s appearance.
+				</p>
+				<p>
+					We can manipulate an element’s appearance using transform functions.
+					The value of the transform property is one or more transform functions
+					(separated by spaces) that will be applied in the order they’re
+					provided.
+				</p>
+				<section>
+					<h4>Translation</h4>
+					<p>
+						Translation functions allow you to move elements left, right, up, or
+						down. These functions are similar to the behavior of position:
+						relative; when declaring top and left, moving elements up and down
+						or left and right along the x and y axes.
+					</p>
+				</section>
+				<h4>Skew</h4>
+				<p>
+					The skew(x,y) function specifies a skew along the x and y axes. As
+					you’d expect, the x specifies the skew on the x axis, and the y
+					specifies the skew on the y axis. If the second parameter is omitted,
+					the skew will only occur on the x axis.
+				</p>
+			</section>
+			<section>
+				<h4>Rotation</h4>
+				<p>
+					The rotate() function rotates an element around the point of origin by
+					a specified angle value. As with scale, by default the point of origin
+					is the element’s center. Generally, angles are declared in degrees,
+					with positive degrees moving clockwise and negative moving
+					counterclockwise. In addition to degrees, values can be provided in
+					grads, radians, or turns, but we’ll just be sticking with degrees.
+				</p>
+			</section>
+			<section>
+				<h3>Transitions</h3>
+				<p>
+					Transitions allow the values of CSS properties to change over time,
+					essentially providing simple animations. For example, if a link
+					changes color on hover, you can have it gradually fade from one color
+					to the other instead of a sudden change.
+				</p>
+				<p>
+					CSS transitions are declared along with the regular styles on an
+					element. Whenever the target properties change, the browser will apply
+					the transition making the change gradual.
+				</p>
+			</section>
+		</main>
+		<footer></footer>
+	</body>
+</html>
