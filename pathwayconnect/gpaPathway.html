@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lan="en-GH">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>GPA calculator</title>
+		<script>
+			/*  Defining Table
+		  
+		 *  Input: Student's name and scores for PC101, PC102, PC103 and the introductory certificate course
+
+		 *  Processing: Dtermine a letter grade for each course using the scores. Calculate an average score for all the courses and the the GPA using the average score
+
+		 *  Output: Letter grade for each course, An average score for the courses and GPA 
+		 
+		 */
+
+			function determineGrade(score) {
+				if (score > 93) {
+					return "<strong style='color: #CB5E00; font-size: 23px;'> A </strong>";
+				} else if (score >= 90 && score <= 93) {
+					return "<strong style='color: #CB5E00; font-size: 23px;'> A- </strong>";
+				} else if (score >= 87 && score < 90) {
+					return "<strong style='color: #CB5E00; font-size: 23px;'> B+ </strong>";
+				} else if (score >= 83 && score < 87) {
+					return "<strong style='color: #CB5E00; font-size: 23px;'> B </strong>";
+				} else if (score >= 80 && score < 83) {
+					return "<strong style='color: #CB5E00; font-size: 23px;'> B- </strong>";
+				} else if (score >= 77 && score < 80) {
+					return "<strong style='color: #CB5E00; font-size: 23px;'> C+ </strong>";
+				} else if (score >= 73 && score < 77) {
+					return "<strong style='color: #CB5E00; font-size: 23px;'> C </strong>";
+				} else if (score >= 70 && score < 73) {
+					return "<strong style='color: #CB5E00; font-size: 23px;'> C- </strong>";
+				} else if (score >= 67 && score < 70) {
+					return "<strong style='color: #CB5E00; font-size: 23px;'> D+ </strong>";
+				} else if (score >= 63 && score < 67) {
+					return "<strong style='color: #CB5E00; font-size: 23px;'> D </strong>";
+				} else if (score >= 60 && score < 63) {
+					return "<strong style='color: #CB5E00; font-size: 23px;'> D- </strong>";
+				} else if (score < 60) {
+					return "<strong style='color: #CB5E00; font-size: 23px;'> F </strong>";
+				} else {
+					return "<p style='font-size: 20px; ''>Grade</p>";
+				}
+			}
+
+			function getGPA(average) {
+				if (average > 93) {
+					return 4.0;
+				} else if (average >= 90 && average <= 93) {
+					return 3.7;
+				} else if (average >= 87 && average < 90) {
+					return 3.4;
+				} else if (average >= 83 && average < 87) {
+					return 3.0;
+				} else if (average >= 80 && average < 83) {
+					return 2.7;
+				} else if (average >= 77 && average < 80) {
+					return 2.4;
+				} else if (average >= 73 && average < 77) {
+					return 2.0;
+				} else if (average >= 70 && average < 73) {
+					return 1.7;
+				} else if (average >= 67 && average < 70) {
+					return 1.4;
+				} else if (average >= 63 && average < 67) {
+					return 1.0;
+				} else if (average >= 60 && average < 63) {
+					return 0.7;
+				} else {
+					return 0.0;
+				}
+			}
+
+			function calcAverage(pc101, pc102, pc103, certCourse) {
+				return (
+					Math.round(((pc101 + pc102 + pc103 + certCourse) / 4) * 100) / 100
+				);
+			}
+
+			function pc101Display() {
+				let pc101 = parseFloat(document.getElementById("pc1").value);
+				let pc101Grade = determineGrade(pc101);
+				document.getElementById("output1").innerHTML = pc101Grade;
+			}
+
+			function pc102Display() {
+				let pc102 = parseFloat(document.getElementById("pc2").value);
+				let pc102Grade = determineGrade(pc102);
+				document.getElementById("output2").innerHTML = pc102Grade;
+			}
+
+			function pc103Display() {
+				let pc103 = parseFloat(document.getElementById("pc3").value);
+				let pc103Grade = determineGrade(pc103);
+				document.getElementById("output3").innerHTML = pc103Grade;
+			}
+
+			function certificate() {
+				let certCourse = parseFloat(document.getElementById("pc4").value);
+				let certCourseGrade = determineGrade(certCourse);
+				document.getElementById("output4").innerHTML = certCourseGrade;
+			}
+
+			function displayAverage() {
+				let avg1 = parseFloat(document.getElementById("pc1").value);
+				let avg2 = parseFloat(document.getElementById("pc2").value);
+				let avg3 = parseFloat(document.getElementById("pc3").value);
+				let avg4 = parseFloat(document.getElementById("pc4").value);
+				let average = calcAverage(avg1, avg2, avg3, avg4);
+				let gpa = getGPA(average).toFixed(1);
+				let assure = confirm("Proceed to calculate? ");
+				if (assure === true) {
+					document.getElementById("display").innerHTML =
+						calcAverage(avg1, avg2, avg3, avg4) + "%";
+					document.getElementById("outputGPA").innerHTML = gpa;
+				}
+			}
+		</script>
+		<style type="text/css" media="screen">
+			body {
+				width: 550px;
+				border: 0;
+				padding: 0;
+			}
+
+			header {
+				background-color: orange;
+				animation: heading 5s infinite;
+				margin-top: -20px;
+				margin-left: -3px;
+				width: 101%;
+				height: 80px;
+				box-shadow: -3px 4px 3px #777777;
+			}
+
+			@keyframes heading {
+				50% {
+					background-color: white;
+				}
+			}
+
+			h1 {
+				position: relative;
+				color: white;
+				animation: headline 5s infinite;
+				font-family: Cambria;
+				text-indent: 10px;
+				padding-top: 20px;
+			}
+
+			@keyframes headline {
+				40% {
+					color: darkorange;
+				}
+			}
+
+			h2 {
+				color: #cb5e00;
+				font-family: Cambria;
+				margin-left: 20%;
+				text-decoration-line: underline;
+			}
+
+			h3 {
+				color: #cb5e00;
+				font-family: Cambria;
+				font-size: 20px;
+			}
+
+			table {
+				border: 2px solid darkorange;
+				border-radius: 15px;
+				width: 68%;
+				margin: 0 auto;
+			}
+
+			th {
+				text-align: left;
+				text-indent: 3px;
+				border-radius: 15px 15px 0 0;
+				width: 20px;
+				border-bottom: 1px solid darkorange;
+			}
+
+			td {
+				text-align: left;
+				text-indent: 3px;
+				padding: 5px;
+				border-radius: 0 0 0 15px;
+			}
+
+			th,
+			td {
+				padding: -7px 10px 10px 10px;
+			}
+
+			input {
+				border: 0;
+				height: 60px;
+				width: 180px;
+				font-size: 1.3em;
+				font-family: Cambria;
+			}
+
+			#output1,
+			#output2,
+			#output3,
+			#output4 {
+				width: 100px;
+				text-align: center;
+				border-radius: 0 0 15px 0;
+				border-left: 1px solid darkorange;
+				color: #cb5e00;
+			}
+
+			button {
+				background-color: orange;
+				border-radius: 20px;
+				border: 0;
+				width: 150px;
+				height: 40px;
+				font-family: Cambria, serif;
+				font-weight: bold;
+				font-size: 18px;
+				margin: 3% 37%;
+				color: white;
+				animation: more 3s infinite;
+				box-shadow: -3px 4px 4px #777777;
+			}
+
+			@keyframes more {
+				50% {
+					background-color: #ff580a;
+				}
+			}
+
+			button:hover {
+				background-color: #cb6c00;
+				animation: none;
+			}
+			header:hover {
+				animation: none;
+			}
+
+			h1:hover {
+				animation: none;
+			}
+
+			.mainOutput {
+				display: grid;
+				grid-template-columns: repeat(5, 20%);
+				grid-template-rows: 1fr 1fr;
+				position: sticky;
+				bottom: 0;
+				background-color: white;
+				border-top: 2px solid darkorange;
+			}
+
+			.average {
+				grid-column: 1 / span 2;
+				grid-row: 1;
+			}
+
+			.gpa {
+				grid-column: 5 / span 2;
+				grid-row: 1;
+			}
+
+			#display {
+				grid-column: 1 / span 2;
+				grid-row: 2;
+				margin-top: -4%;
+				font-family: cambria;
+				font-weight: bolder;
+				font-size: 20px;
+			}
+
+			#outputGPA {
+				grid-column: 5 / span 2;
+				grid-row: 2;
+				font-size: 40px;
+				font-weight: bolder;
+				font-family: Cambria;
+				margin-top: -10%;
+				margin-left: 10px;
+				animation: gpa 3s infinite;
+				color: darkorange;
+			}
+
+			@keyframes gpa {
+				20% {
+					color: red;
+				}
+			}
+		</style>
+	</head>
+
+	<body>
+		<header>
+			<h1>PathwayConnect GPA Calculator</h1>
+		</header>
+
+		<main>
+			<form>
+				<h2>Semester 1</h2>
+				<table>
+					<tr>
+						<th colspan="2">
+							<label for="pc1"><h3>PC101: Life Skills</h3></label>
+						</th>
+					</tr>
+					<tr>
+						<td>
+							<input
+								type="number"
+								id="pc1"
+								placeholder="Enter score here"
+								onkeyup="pc101Display()"
+							/>
+						</td>
+						<td id="output1" style="color: grey; font-size: 20px">Grade</td>
+					</tr>
+				</table>
+				<br />
+
+				<h2>Semester 2</h2>
+				<table>
+					<tr>
+						<th colspan="2">
+							<label for="pc2"><h3>PC102: Professional Skills</h3></label>
+						</th>
+					</tr>
+					<tr>
+						<td>
+							<input
+								type="number"
+								id="pc2"
+								placeholder="Enter score here"
+								onkeyup="pc102Display()"
+							/>
+						</td>
+						<td id="output2" style="color: grey; font-size: 20px">Grade</td>
+					</tr>
+				</table>
+				<br />
+
+				<h2>Semester 3</h2>
+				<table>
+					<tr>
+						<th colspan="2">
+							<label for="pc3"><h3>PC103: University Skills</h3></label>
+						</th>
+					</tr>
+					<tr>
+						<td>
+							<input
+								type="number"
+								id="pc3"
+								size="5"
+								placeholder="Enter score here"
+								onkeyup="pc103Display()"
+							/>
+						</td>
+						<td id="output3" style="color: grey; font-size: 20px">Grade</td>
+					</tr>
+				</table>
+				<br />
+				<table>
+					<tr>
+						<th colspan="2">
+							<label for="pc4"><h3>Introductory Certificate Course</h3></label>
+						</th>
+					</tr>
+					<tr>
+						<td>
+							<input
+								type="number"
+								id="pc4"
+								size="5"
+								placeholder="Enter score here"
+								onkeyup="certificate()"
+							/>
+						</td>
+						<td id="output4" style="color: grey; font-size: 20px">Grade</td>
+					</tr>
+				</table>
+			</form>
+			<br />
+			<button type="button" onclick="displayAverage()">Calculate</button>
+
+			<section class="mainOutput">
+				<h3 class="average">Average Score</h3>
+				<p id="display">0.0%</p>
+				<h3 class="gpa">Your GPA</h3>
+				<p id="outputGPA">0.0</p>
+			</section>
+		</main>
+	</body>
+</html>
